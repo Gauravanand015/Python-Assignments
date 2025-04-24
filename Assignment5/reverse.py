@@ -6,10 +6,13 @@ new_list = []
 for i in range(5):
     new_list.append(my_list[i])
 
+print(f"Extracted First Five elements: {new_list}")
+
 index = len(new_list) - 1
 
-for i in range(len(new_list) // 2):  
-    new_list[i], new_list[index] = new_list[index], new_list[i]
+# Extract the last 5 elements in reverse order
+for i in range(len(new_list)//2): 
+    new_list[i],new_list[index] = new_list[index],new_list[i]
     index -= 1 
 
-print(new_list)
+print(f"Extracted Reverse elements: {new_list}")

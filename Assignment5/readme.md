@@ -1,54 +1,65 @@
-## Assignment 1
+# Assignment Explanations
 
-# Student Grades Lookup Program
+This document explains the logic and flow of both Python assignments: **Student Grades Lookup** and **Reverse First 5 Elements of a List**.
 
-This Python script retrieves and displays a student's grade from a predefined dictionary.
+---
 
-## How to Use
+## Assignment 1: Student Grades Lookup Program
 
-1. Run the script in a Python environment.
-2. Enter a student's name when prompted.
-3. The program will display the student's grade if the name exists.
-4. If the student's name is not found, an error message will be displayed.
+### Overview
 
-## Example Output
+This program allows the user to input a student's name and returns their grade if the student is present in the predefined dictionary. If the name is not found, it gracefully handles the error and notifies the user.
 
-```
-Student Name: Alice
-Alice's grade is 85
-```
+### Detailed Explanation
 
-```
-Student Name: John
-John not found.
-```
+- A dictionary named `student_grades` is defined, where:
 
-## Notes
+  - Keys are student names (e.g., `"Alice"`, `"Bob"`).
+  - Values are their corresponding grades (e.g., `85`, `78`).
 
-- The script uses a dictionary to store student names and grades.
-- A `KeyError` is handled if a name is not found in the dictionary.
+- The user is prompted to enter a name via `input()`.
 
-## Assignment 2
+- The program tries to look up the name in the dictionary:
+  - If the name exists, it prints the grade.
+  - If the name doesn't exist, a `KeyError` is raised, which is caught using a `try-except` block, and a friendly message is displayed.
 
-# Reverse First 5 Elements of a List
+### Key Concepts Used
 
-This Python script extracts the first five elements from a list and reverses their order.
+- Dictionaries
+- User input
+- Error handling (`try-except`)
+- String formatting with `f""`
 
-## How to Use
+---
 
-1. Run the script in a Python environment.
-2. The program will create a new list with the first five elements reversed.
-3. The reversed list will be displayed in the console.
+## Assignment 2: Reverse First 5 Elements of a List
 
-## Example Output
+### Overview
 
-```
-[5, 4, 3, 2, 1]
-```
+This program extracts the first five elements from a list and reverses them using manual element swapping in a loop.
 
-## Code Explanation
+### Detailed Explanation
 
-- A predefined list `my_list` contains numbers from 1 to 10.
-- The first five elements are extracted into `new_list`.
-- A loop swaps elements to reverse the order of `new_list`.
-- The final reversed list is printed.
+- A list `my_list` contains numbers from 1 to 10.
+- A new list `new_list` is created by extracting the first five elements of `my_list` using a `for` loop.
+
+- The list `new_list` is then reversed in place using a swapping technique:
+
+  - An `index` pointer starts at the last position of the list (`len(new_list) - 1`).
+  - The program iterates through the list, swapping elements from both ends towards the center.
+  - The elements at positions `i` and `index` are swapped using:
+    ```python
+    new_list[i], new_list[index] = new_list[index], new_list[i]
+    ```
+  - After each swap, the `index` is decreased to move towards the center.
+
+- After all swaps are complete, the reversed list is printed.
+
+### Key Concepts Used
+
+- Lists
+- Indexing and appending
+- Looping with `for`
+- Two-pointer technique for reversal
+
+---
